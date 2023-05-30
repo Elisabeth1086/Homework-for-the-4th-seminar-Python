@@ -11,18 +11,17 @@
 n = int(input('Введите количество элементов 1-го множества: '))
 elements_n = set()
 for i in range(n):
-    elements_n.add(input())
+    elements_n.add(int(input()))
+elements_n = [*set(elements_n)]           # заполнение множества
 print('Множество:', sorted(elements_n))
-
 
 m = int(input('Введите количество элементов 2-го множества: '))
 elements_m = set()
 for i in range(m):
-    elements_m.add(input())
+    elements_m.add(int(input()))
+elements_m = [*set(elements_m)]
 print('Множество:', sorted(elements_m))
 
-u = set()
-u = sorted(elements_n.intersection(elements_m))
+u = sorted(list(elements_n and elements_m))       # ищет элементы, которые есть и в множестве 1 и в множестве 2
 
-print()
-print(f'Числа, встречающиеся в обоих наборах: {u}')
+print(f'Числа, встречающиеся в обоих наборах: {u}')   # если написать sorted(list(elements_n and elemens_m), reverse = True) - по убыванию
